@@ -1,39 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My 3D Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <meta name="description" content="Interactive 3D portfolio showcasing full-stack development skills">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Hey, I'm [Anuj Pal]</h1>
-    <p>Welcome to my 3D Portfolio</p>
-    <div id="three-container"></div>
-  </header>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-3d">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+        </div>
+    </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="cards-container"></div>
-  </section>
+    <!-- Particles Background -->
+    <div id="particles-container" class="particles-container"></div>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <a href="resume.pdf" download>Download Resume</a>
-  </section>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-nav="about">About</a>
+                <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+                <a href="#certificates" class="nav-link" data-nav="certificates">Certificates</a>
+                <a href="#languages" class="nav-link" data-nav="languages">Languages</a>
+                <a href="#education" class="nav-link" data-nav="education">Education</a>
+                <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+            </div>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="certificates-container"></div>
-  </section>
+            <div class="nav-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="english">EN</button>
+                    <button class="lang-btn" data-lang="hindi">हि</button>
+                    <button class="lang-btn" data-lang="hinglish">HIN</button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="social-icons"></div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+            
+            <div class="hero-main">
+                <div class="profile-image-3d">
+                    <div class="image-container">
+                        <div class="profile-image">
+                            <img src="profile.jpg" alt="Anuj Pal">
+                        </div>
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-text">
+                    <h1 class="hero-name" data-text="hero.name">Anuj Pal</h1>
+                    <p class="hero-tagline typing-text" data-text="hero.tagline">Diploma in CSE</p>
+                    <p class="hero-description" data-text="hero.description">Creating exceptional digital experiences with cutting-edge technology</p>
+                    <button class="btn-3d hero-cta" data-text="hero.cta">View My Work</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title" data-text="about.title">About Me</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description" data-text="about.description"> I’m a dedicated and hardworking tech enthusiast with a <strong>Diploma in Computer Science & Engineering</strong>, passionate about using technology to make life simpler and smarter. I enjoy solving problems, learning new tools, and improving systems — whether it’s fixing an issue, managing data, or finding faster ways to get things done.<br><br> I’ve built solid skills in <strong>IT support</strong>, <strong>data entry</strong>, <strong>database management</strong>, and <strong>technical troubleshooting</strong>, along with a good command of <strong>MS Office</strong> and <strong>AI tools</strong>. My ability to <strong>type fast</strong> and work with focus helps me complete <strong>tasks efficiently</strong> and <strong>accurately</strong>.<br><br> Beyond work, I’m someone who believes in balance. I love playing cricket, singing, and spending time exploring new tech or learning something creative. These interests keep me active, focused, and open-minded — qualities I bring into every project I work on.<br><br> Right now, I’m looking for opportunities as an <strong>IT Support Technician</strong>, <strong>Data Entry Operator</strong>, <strong>Database Assistant</strong>, or T<strong>echnical Support Executive</strong>, where I can apply my skills, grow my experience, and contribute to a professional team that values dedication and innovation.
+                    </p>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number" data-static="true">Fresher</div>
+                        <div class="stat-label" data-text="about.stats.0.label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label" data-text="about.stats.1.label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label" data-text="about.stats.2.label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3 class="skills-title">Technical Skills</h3>
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title" data-text="nav.projects">Projects</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="container">
+            <h2 class="section-title" data-text="nav.certificates">Certificates</h2>
+            
+            <div class="certificates-carousel">
+                <div class="carousel-container">
+                </div>
+                <div id="certificates-carousel" class="carousel-track">
+                    <!-- Certificates will be populated by JavaScript -->
+                </div>
+            </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="cert-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="cert-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="section languages-section">
+        <div class="container">
+            <h2 class="section-title" data-text="nav.languages">Languages</h2>
+            
+            <div class="languages-grid" id="languages-grid">
+                <!-- Languages will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <h2 class="section-title" data-text="nav.education">Education</h2>
+            
+            <div class="timeline" id="timeline">
+                <!-- Timeline will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-text="contact.title">Get In Touch</h2>
+            <p class="contact-description" data-text="contact.description">Let's discuss your next project or just say hello!</p>
+            
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group-3d">
+                            <input type="text" id="name" name="name" class="form-input-3d" required>
+                            <label for="name" class="form-label-3d" data-text="contact.form.name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group-3d">
+                            <input type="email" id="email" name="email" class="form-input-3d" required>
+                            <label for="email" class="form-label-3d" data-text="contact.form.email">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group-3d">
+                            <textarea id="message" name="message" class="form-input-3d" rows="5" required></textarea>
+                            <label for="message" class="form-label-3d" data-text="contact.form.message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-3d submit-btn" data-text="contact.form.send">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="social-links" id="social-links">
+                        <!-- Social links will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Portfolio. Crafted with ❤️ and cutting-edge technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Lightbox -->
+    <div id="cert-lightbox" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="lightbox-content">
+            <button class="modal-close" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-body" id="lightbox-body">
+                <!-- Lightbox content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
