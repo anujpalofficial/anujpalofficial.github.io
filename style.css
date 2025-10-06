@@ -2260,15 +2260,6 @@ select.form-control {
     max-height: 80vh;
   }
 }
-/* ===== Fix Language Switcher Mobile Overflow ===== */
-.language-switcher {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
 #lightbox-close {
   position: absolute;
   top: 10px;
