@@ -1512,41 +1512,98 @@ select.form-control {
 
 /* Certificates Section */
 .certificates-carousel {
-  position: relative;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
 }
 
 .carousel-container {
-  display: flex;
   overflow: hidden;
-  width: 100%;
-  padding: 0%;
-  border-radius: var(--radius-lg);
 }
 
-.carousel-track{
+.carousel-track {
   display: flex;
   transition: transform 0.4s ease;
-  width: 100%;
-  gap: 0%;
+  gap: 1rem;
 }
+
 .certificate-card {
-  min-width: 100%;
-  background: rgba(var(--color-charcoal-800-rgb, 38, 40, 40), 0.8);
-  border: 1px solid rgba(var(--color-teal-300-rgb), 0.2);
-  border-radius: var(--radius-lg);
-  padding: var(--space-32);
+  flex: 0 0 calc(33.333% - 1rem); /* Show 3 cards horizontally */
+  background: var(--color-charcoal-800);
+  border: 1px solid var(--color-teal-300);
+  border-radius: 8px;
+  padding: 1rem;
   text-align: center;
-  transform: translateZ(0);
-  transition: var(--transition-smooth);
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .certificate-card:hover {
-  transform: scale(1.02);
-  border-color: var(--color-teal-300);
+  transform: scale(1.05);
+  border-color: var(--color-teal-500);
 }
+.certificate-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  user-select: none;
+}
+
+.btn--primary {
+  background: var(--color-teal-500);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-teal-600);
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 2px solid var(--color-teal-500);
+  color: var(--color-teal-500);
+}
+
+.btn--secondary:hover {
+  background: var(--color-teal-500);
+  color: var(--color-white);
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  background: var(--color-teal-300);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: var(--color-slate-900);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--color-teal-500);
+}
+
 
 .certificate-title {
   font-size: var(--font-size-xl);
