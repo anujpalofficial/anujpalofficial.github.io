@@ -2307,6 +2307,7 @@ nav.navbar .nav-container,
 /* Make a separate rule for the certificates carousel only */
 #certificates-carousel {
   display: flex;
+  max-width: 10%;
   transition: transform 0.6s ease;
   gap: 1rem;
 
