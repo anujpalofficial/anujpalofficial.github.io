@@ -46,7 +46,7 @@ const portfolioData = {
           "issuer": "Microsoft",
           "date": "Sep 2025",
           imageSrc: 'certificates/ai-to-be-aware.jpg',
-          verifyLink: 'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_be0dfee2-2417-45c1-a4ea-71ccbc3a80a1.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T101101Z&X-Amz-SignedHeaders=host&X-Amz-Expires=2000&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b9dc6bc13bfb4ae2521c22641b17b8006a7243e830205cd01662e2a8d4a68811'
+          verifyLink: 'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-be0dfee2-2417-45c1-a4ea-71ccbc3a80a1'
 
         },
         {
@@ -54,35 +54,35 @@ const portfolioData = {
           "issuer": "Reliance Foundation Skilling Academy",
           "date": "2025",
           imageSrc: 'certificates/python.jpg',
-          verifyLink:'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_91118d47-0cc8-4fb2-b290-af902fb4b2f3.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T100652Z&X-Amz-SignedHeaders=host&X-Amz-Expires=2000&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=75015f0d74b256e1afaddf35ffa36f8a64d363de6b4ed405fcef93db2779f1e0'
+          verifyLink:'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-91118d47-0cc8-4fb2-b290-af902fb4b2f3'
         },
         {
           "title": "SOAR - AI for Educators",
           "issuer": "Microsoft",
           "date": "2025",
           imageSrc: 'certificates/ai-for-educators.jpg',
-          verifyLink:'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_32a4d818-8f1e-4bb4-bc6e-8fedc5cfa61c.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T101323Z&X-Amz-SignedHeaders=host&X-Amz-Expires=2000&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=01807d125f134dcf52a69c9ec72397f8e27ab65043e4a6cfd86862cb4b666fce'
+          verifyLink:'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-32a4d818-8f1e-4bb4-bc6e-8fedc5cfa61c'
         },
         {
           "title": "Web Design & Development",
           "issuer": "NSDC",
           "date": "2025",
           imageSrc: 'certificates/web-design.jpg',
-          verifyLink:'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_0e985123-f259-488a-9a41-a316980ea081.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T101409Z&X-Amz-SignedHeaders=host&X-Amz-Expires=2000&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=32f654f5f5042cb52e28288fe4e4c2d39e43c6f6b91b5e86f46448185cbf49b4'
+          verifyLink:'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-0e985123-f259-488a-9a41-a316980ea081'
         },
         {
           "title": "Junior Software Developer",
           "issuer": "NASSCOM",
           "date": "2025",
           imageSrc: 'certificates/jsd.jpg',
-          verifyLink:'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_8b8b1f30-4d66-4b1c-ada3-10175417e8ff.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T102455Z&X-Amz-SignedHeaders=host&X-Amz-Expires=2000&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=af2b31935c908ca4b8db03d5cceeb223f897019805fcb79e516360c5d99c6a28'
+          verifyLink:'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-8b8b1f30-4d66-4b1c-ada3-10175417e8ff'
         },
         {
           "title": "Computer Basics & Accounting",
           "issuer": "Reliance Foundation Skilling Academy",
           "date": "2025",
           imageSrc: 'certificates/computer-basics.jpg',
-          verifyLink:'https://skill-india-dev.s3.ap-south-1.amazonaws.com/certificate_generic/uploaded_elements/2024092550468453/certificate_45623c0c-f741-4099-926c-8be044dcd16c.pdf?response-content-disposition=inline&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251005T101901Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1999&X-Amz-Credential=AKIA3OJCFBJTPLAN4OGU%2F20251005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=ed6796e65aa89348e3b6c230fac6a4dfea2add905d6936d81d2fd07b8f3e0ecf'
+          verifyLink:'https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2024092550468453-45623c0c-f741-4099-926c-8be044dcd16c'
         },
       ],
       "education": [
@@ -591,22 +591,48 @@ verifyBtn.addEventListener('click', () => {
   // Carousel controls logic as existing
   let currentCertificateIndex = 0;
 
-  function updateCertificateCarousel() {
-    const translateX = -currentCertificateIndex * 100;
-    carousel.style.transform = `translateX(${translateX}%)`;
-  }
+// Decide how many cards fit per view by container width
+function getPerView() {
+  const container = carousel.parentElement; // usually the .carousel-container
+  const w = container ? container.clientWidth : window.innerWidth;
+  if (w <= 600) return 1;
+  if (w <= 1024) return 2;
+  return 3;
+}
 
-  prevBtn.onclick = () => {
-    currentCertificateIndex = currentCertificateIndex === 0 ? certificates.length - 3 : currentCertificateIndex - 1;
-    updateCertificateCarousel();
-  };
+function updateVarsAndClamp() {
+  const perView = getPerView();
+  const parent = carousel.parentElement || document.documentElement;
+  parent.style.setProperty('--certs-per-view', perView);
+  const total = carousel.querySelectorAll('.certificate-card').length;
+  const maxIndex = Math.max(0, total - perView);
+  if (currentCertificateIndex > maxIndex) currentCertificateIndex = maxIndex;
+  if (currentCertificateIndex < 0) currentCertificateIndex = 0;
+  return { perView, maxIndex, total };
+}
 
-  nextBtn.onclick = () => {
-    currentCertificateIndex = currentCertificateIndex === certificates.length - 3 ? 0 : currentCertificateIndex + 1;
-    updateCertificateCarousel();
-  };
 
+function updateCertificateCarousel() {
+  const { perView, total } = updateVarsAndClamp();
+  const movePercent = (100 / total) * currentCertificateIndex * perView;
+  carousel.style.transform = `translateX(-${movePercent}%)`;
+}
+
+
+prevBtn.onclick = () => {
+  const { maxIndex } = updateVarsAndClamp();
+  currentCertificateIndex = currentCertificateIndex <= 0 ? maxIndex : currentCertificateIndex - 1;
   updateCertificateCarousel();
+};
+
+nextBtn.onclick = () => {
+  const { maxIndex } = updateVarsAndClamp();
+  currentCertificateIndex = currentCertificateIndex >= maxIndex ? 0 : currentCertificateIndex + 1;
+  updateCertificateCarousel();
+};
+
+window.addEventListener('resize', updateCertificateCarousel);
+updateCertificateCarousel();
 }
 
 function openCertificateLightbox(cert) {
