@@ -614,8 +614,9 @@ function updateVarsAndClamp() {
 
 function updateCertificateCarousel() {
   const { perView, total } = updateVarsAndClamp();
-  const movePercent = (100 / total) * currentCertificateIndex * perView;
-  carousel.style.transform = `translateX(-${movePercent}%)`;
+  const cardWidth = carousel.querySelector('.certificate-card').offsetWidth + 16; // 16px gap
+  const movePx = currentCertificateIndex * cardWidth;
+  carousel.style.transform = `translateX(-${movePx}px)`;
 }
 
 
