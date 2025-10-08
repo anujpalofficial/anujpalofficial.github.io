@@ -14,7 +14,8 @@ const portfolioData = {
         "name": "Anuj Pal",
         "tagline": "Diploma in CSE | Python | Excel | PowerPoint | Entry-Level Tech Enthusiast",
         "description": "Creating exceptional digital experiences with cutting-edge technology",
-        "cta": "View My Work"
+        "cta": "View My Work",
+        "resumeCta": "Download Resume"
       },
       "about": {
         "title": "About Me",
@@ -132,7 +133,8 @@ const portfolioData = {
         "name": "अनुज पाल",
         "tagline": "फुल-स्टैक डेवलपर और UI/UX डिज़ाइनर",
         "description": "आधुनिक तकनीक के साथ असाधारण डिजिटल अनुभव बनाना",
-        "cta": "मेरा काम देखें"
+        "cta": "मेरा काम देखें",
+        "resumeCta": "Resume डाउनलोड"
       },
       "about": {
         "title": "मेरे बारे में",
@@ -167,7 +169,8 @@ const portfolioData = {
         "name": "Anuj Pal",
         "tagline": "Full-Stack Developer aur UI/UX Designer",
         "description": "Latest technology ke saath amazing digital experiences banata hun",
-        "cta": "Mera Work Dekho"
+        "cta": "Mera Work Dekho",
+        "resumeCta": "Resume Download Karo"
       },
       "about": {
         "title": "Mere Bare Mein",
@@ -715,50 +718,126 @@ function initializeEducation() {
     timeline.appendChild(timelineItem);
   });
 }
+function showToast(message, type = 'success', ms = 2200) {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = message;
+  el.classList.remove('hidden', 'error', 'show');
+  if (type === 'error') el.classList.add('error');
+  // Trigger fade-in
+  requestAnimationFrame(() => el.classList.add('show'));
+  // Auto-hide
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => {
+    el.classList.remove('show');
+    // Hide fully after transition
+    setTimeout(() => el.classList.add('hidden'), 300);
+  }, ms);
+}
+
 
 // Contact Form
 function initializeContactForm() {
   const form = document.getElementById('contact-form');
-  
-  form.addEventListener('submit', (e) => {
+  if (!form) return;
+
+  const submitBtn = form.querySelector('.submit-btn');
+  const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+  const originalText = btnText ? btnText.textContent : 'Send Message';
+
+  // Progressive enhancement: if action missing, keep old animation only
+  const endpoint = form.getAttribute('action');
+  const method = (form.getAttribute('method') || 'POST').toUpperCase();
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalText = submitBtn.querySelector('.btn-text').textContent;
-    
-    // Simulate form submission
-    submitBtn.classList.add('loading');
-    submitBtn.querySelector('.btn-text').textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-      submitBtn.classList.remove('loading');
-      submitBtn.querySelector('.btn-text').textContent = 'Sent!';
-      submitBtn.style.background = 'var(--color-success)';
-      
-      setTimeout(() => {
-        submitBtn.querySelector('.btn-text').textContent = originalText;
-        submitBtn.style.background = '';
-        submitBtn.disabled = false;
+
+    // Start loading UI
+    if (submitBtn) {
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+    }
+    if (btnText) btnText.textContent = 'Sending...';
+
+    // Build payload
+    const formData = new FormData(form);
+
+    try {
+      if (!endpoint) {
+        // No endpoint configured: fallback to fake success (existing behavior)
+        await new Promise(r => setTimeout(r, 1200));
+        if (btnText) btnText.textContent = 'Sent!';
+        if (submitBtn) submitBtn.style.background = 'var(--color-success)';
+        await new Promise(r => setTimeout(r, 1200));
         form.reset();
-      }, 2000);
-    }, 2000);
+        // On success, after form.reset():
+        showToast('Message sent successfully ✅', 'success');
+      } else {
+        // Real submission to Formspree (or compatible)
+        const res = await fetch(endpoint, {
+          method,
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        // Consider 200-299 and 202/204 as success
+        const success = res.ok || res.status === 202 || res.status === 204;
+
+        if (success) {
+          if (btnText) btnText.textContent = 'Sent!';
+          if (submitBtn) submitBtn.style.background = 'var(--color-success)';
+          form.reset();
+          showToast('Message sent successfully ✅', 'success');
+        } else {
+          // Try to read JSON only if response is JSON
+          let message = 'Submission failed';
+          const ct = res.headers.get('content-type') || '';
+          if (ct.includes('application/json')) {
+            const data = await res.json().catch(() => ({}));
+            if (data && data.errors) {
+              message = data.errors.map(e => e.message).join(', ');
+            } else if (data && data.message) {
+              message = data.message;
+            }
+          } else {
+            // Fallback to text for debugging (optional)
+            // const text = await res.text().catch(() => '');
+            // console.log('Form error response:', text);
+          }
+          alert('Form error: ' + message);
+          if (btnText) btnText.textContent = 'Try Again';
+          if (submitBtn) submitBtn.style.background = 'var(--color-error)';
+          showToast('Submission failed. Please try again.', 'error');
+        }
+      }
+    } catch (err) {
+      alert('Network error. Please check connection and try again.');
+      if (btnText) btnText.textContent = 'Try Again';
+      if (submitBtn) submitBtn.style.background = 'var(--color-error)';
+    } finally {
+      // Restore button after a short delay
+      setTimeout(() => {
+        if (btnText) btnText.textContent = originalText;
+        if (submitBtn) {
+          submitBtn.style.background = '';
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+        }
+      }, 1500);
+    }
   });
 
-  // Floating labels
+  // Floating labels (keep existing behavior)
   const inputs = document.querySelectorAll('.form-input-3d');
-  inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      input.parentNode.classList.add('focused');
-    });
-    
+  inputs.forEach((input) => {
+    input.addEventListener('focus', () => input.parentNode.classList.add('focused'));
     input.addEventListener('blur', () => {
-      if (!input.value) {
-        input.parentNode.classList.remove('focused');
-      }
+      if (!input.value) input.parentNode.classList.remove('focused');
     });
   });
 }
+
 
 // Social Links
 function initializeSocialLinks() {

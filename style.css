@@ -1888,7 +1888,7 @@ select.form-control {
   position: relative;
   overflow: hidden;
 }
-
+.submit-btn.loading { opacity: 0.8; pointer-events: none; }
 .btn-text,
 .btn-icon {
   transition: var(--transition-smooth);
@@ -2323,3 +2323,33 @@ nav.navbar .nav-container,
   max-width: 100vw;
   overflow: hidden;
 }
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  max-width: 320px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: var(--font-size-sm);
+  color: var(--color-btn-primary-text);
+  background: rgba(var(--color-success-rgb), 0.95);
+  box-shadow: var(--shadow-lg);
+  z-index: 1200;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--duration-normal) var(--ease-standard),
+              transform var(--duration-normal) var(--ease-standard);
+  pointer-events: none;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast.error {
+  background: rgba(var(--color-error-rgb), 0.95);
+}
+.toast.hidden {
+  display: none;
+}
+/* Optional alternative */
+.top-right .toast, .toast { top: 16px; bottom: auto; }

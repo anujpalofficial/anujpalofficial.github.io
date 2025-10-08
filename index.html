@@ -49,6 +49,11 @@
                     <button class="lang-btn" data-lang="hindi">हि</button>
                     <button class="lang-btn" data-lang="hinglish">HIN</button>
                 </div>
+                <!-- Download Resume Button -->
+                <a href="resume.pdf" download class="btn btn--primary btn--sm" aria-label="Download Resume">
+                <span>Download Resume</span>
+                </a>
+
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -85,6 +90,11 @@
                     <p class="hero-tagline typing-text" data-text="hero.tagline">Diploma in CSE</p>
                     <p class="hero-description" data-text="hero.description">Creating exceptional digital experiences with cutting-edge technology</p>
                     <button class="btn-3d hero-cta" data-text="hero.cta">View My Work</button>
+                    <a href="resume.pdf" download class="btn-3d" data-text="hero.resumeCta" aria-label="Download Resume">
+                    Download Resume
+                    </a>
+
+
                 </div>
             </div>
         </div>
@@ -200,7 +210,8 @@
             
             <div class="contact-content">
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form" id="contact-form" method="post"
+                    action="https://formspree.io/f/mldpwnzy">
                         <div class="form-group-3d">
                             <input type="text" id="name" name="name" class="form-input-3d" required>
                             <label for="name" class="form-label-3d" data-text="contact.form.name">Your Name</label>
@@ -215,7 +226,7 @@
                             <textarea id="message" name="message" class="form-input-3d" rows="5" required></textarea>
                             <label for="message" class="form-label-3d" data-text="contact.form.message">Your Message</label>
                         </div>
-                        
+                        <input type="hidden" name="_subject" value="New message from Portfolio Contact Form" /> <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
                         <button type="submit" class="btn-3d submit-btn" data-text="contact.form.send">
                             <span class="btn-text">Send Message</span>
                             <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
@@ -271,6 +282,7 @@
             </div>
         </div>
     </div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
     <script src="app.js"></script>
     </div> <!-- end .page-wrapper -->
